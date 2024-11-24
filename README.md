@@ -3,23 +3,23 @@ CSRF Vulnerability Scanner
 This script scans a given URL for potential Cross-Site Request Forgery (CSRF) vulnerabilities by analyzing the forms on the webpage.
 
 How It Works
-Fetch the Webpage:
+1 Fetch the Webpage:
 
 Uses requests to retrieve the page's HTML content.
 
 Handles errors such as invalid URLs or network issues.
 
-Parse HTML Forms:
+2 Parse HTML Forms:
 
 Uses BeautifulSoup to find all <form> elements on the page.
 
-Check for CSRF Protection:
+3 Check for CSRF Protection:
 
 Each form is checked for a hidden field with the name csrf_token (or similar).
 
 If a form lacks this field, it is flagged as potentially vulnerable.
 
-Output Results:
+4 Output Results:
 
 Displays the action URL of each potentially vulnerable form and its full HTML structure.
 
