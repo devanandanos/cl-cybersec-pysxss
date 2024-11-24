@@ -1,5 +1,5 @@
 # cl-cybersec-pysxss
-CSRF Vulnerability Scanner
+CSRF Vulnerability Scanner-
 This script scans a given URL for potential Cross-Site Request Forgery (CSRF) vulnerabilities by analyzing the forms on the webpage.
 
 How It Works
