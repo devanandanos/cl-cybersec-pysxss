@@ -1,45 +1,45 @@
-# cl-cybersec-pysxss
-CSRF Vulnerability Scanner-
-This script scans a given URL for potential Cross-Site Request Forgery (CSRF) vulnerabilities by analyzing the forms on the webpage.
+CSRF Vulnerability Scanner  
 
-How It Works
+This script scans a given URL for potential Cross-Site Request Forgery (CSRF) vulnerabilities by inspecting the `<form>` elements present on the webpage.  
 
-1 Fetch the Webpage:
+---
 
-Uses requests to retrieve the page's HTML content.
+How It Works  
 
-Handles errors such as invalid URLs or network issues.
+1. Fetch the Webpage  
+   - Uses the `requests` library to retrieve the HTML content of the target page.  
+   - Includes error handling to manage scenarios like invalid URLs or network issues.  
 
+2. Parse HTML Forms  
+   - Utilizes `BeautifulSoup` to locate all `<form>` elements on the page.  
 
-2 Parse HTML Forms:
+3. Check for CSRF Protection  
+   - Examines each `<form>` for the presence of a hidden input field with a name like `csrf_token` or similar.  
+   - Forms without this field are flagged as potentially vulnerable to CSRF attacks.  
 
-Uses BeautifulSoup to find all <form> elements on the page.
+4. Output Results  
+   - For each potentially vulnerable form, the script displays:  
+     - Action URL: The endpoint where the form submits data.  
+     - Form HTML: The complete HTML structure of the form.  
 
+---
 
-3 Check for CSRF Protection:
+Example Usage  
 
-Each form is checked for a hidden field with the name csrf_token (or similar).
+1. Run the script.  
+2. Provide the target URL when prompted.  
+3. If vulnerabilities are detected, the script will output:  
+   - Action URL: The submission endpoint of the form.  
+   - Form HTML: The complete HTML of the flagged form.  
 
-If a form lacks this field, it is flagged as potentially vulnerable.
+---
 
+Notes  
 
-4 Output Results:
+- If the target website uses a custom name for CSRF tokens, update the script to check for that specific field name.  
+- Always obtain proper authorization before scanning any website, as unauthorized scanning may be illegal and could result in legal consequences.  
 
-Displays the action URL of each potentially vulnerable form and its full HTML structure.
+---
 
-
-Example Usage
-Run the script.
-
-Enter the target URL when prompted.
-
-If vulnerabilities are found, the script lists:
-
-Action URL: Where the form submits data.
-
-Form HTML: The entire HTML of the vulnerable form.
-
-Notes
-Modify the csrf_token field name if the target site uses a custom name for CSRF tokens.
-
-Always have permission before scanning websites, as unauthorized scanning may be illegal.
+Disclaimer:  
+This scanner is intended for ethical testing and educational purposes only. Use responsibly and ensure you have proper permissions before performing any scans.  
