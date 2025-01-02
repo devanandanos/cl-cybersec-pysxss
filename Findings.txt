@@ -1,5 +1,5 @@
 Documenting Findings: XSS Payload Generation and WAF Evasion  
-Prepared by: Deva Nandan O.S  
+done by: Deva Nandan O.S  
 
 ---
 
